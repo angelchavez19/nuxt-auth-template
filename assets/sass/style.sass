@@ -1,0 +1,32 @@
+$primary-background: #00171fff
+$secondary-background: #16272c
+$primary: #4FB286
+$primary-dark: #4f9279
+$primary-text: #F3F9E3
+
+// ------- FLEX
+
+@mixin f()
+  display: flex
+
+@mixin f-al-c()
+  @include f()
+  align-items: center
+
+@mixin f-jc-c()
+  @include f()
+  justify-content: center
+
+@mixin f-center()
+  @include f-al-c()
+  @include f-jc-c()
+
+// ------- FONT
+
+@mixin font($size, $family, $weight)
+  font-size: $size
+  font-family: $family
+  font-weight: $weight
+
+@mixin font-primary($size: 1rem, $weight: auto)
+  @include font($size, "Roboto", $weight)

@@ -1,0 +1,14 @@
+@use './style'
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap')
+
+*
+  margin: 0
+  padding: 0
+
+html
+  scroll-behavior: smooth
+
+  body
+    @include style.font-primary()
+    color: style.$primary-text
+    background-color: style.$primary-background
