@@ -9,7 +9,12 @@ const handleToogle = () => {
 </script>
 
 <template>
-  <button @click="handleToogle">Estado: {{ theme }}</button>
+  <button @click="handleToogle">Toogle</button>
 </template>
 
-<style scoped lang="sass"></style>
+<style scoped lang="sass">
+button
+  position: fixed
+  bottom: 0
+  left: 0
+</style>

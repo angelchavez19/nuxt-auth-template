@@ -3,8 +3,9 @@ useHead({ title: "Nuxt Auth Template" });
 </script>
 
 <template>
-  <ToogleTheme />
   Index Page
+  <NuxtLink :to="{ name: 'auth-login' }">Login</NuxtLink>
+  <NuxtLink :to="{ name: 'auth-register' }">Register</NuxtLink>
 </template>
 
 <style scoped lang="sass"></style>

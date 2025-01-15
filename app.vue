@@ -3,6 +3,7 @@ import "~/assets/sass/globals.sass";
 </script>
 
 <template>
+  <ToogleTheme />
   <div>
     <NuxtPage />
   </div>

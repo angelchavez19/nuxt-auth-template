@@ -4,12 +4,13 @@
   --primary: #408264
   --primary-hover: #377a5c
   --primary-text: #011219
+  --common-primary-text: #f3f9e3
 
 [data-theme="dark"]
   --primary-background: #00171f
-  --secondary-background: #16272c
+  --secondary-background: #20383f
   --primary: #408264
-  --primary-hover: #559a7a
+  --primary-hover: #377559
   --primary-text: #f3f9e3
 
 // ------- FLEX
@@ -20,6 +21,10 @@
 @mixin f-al-c()
   @include f()
   align-items: center
+
+@mixin f-al-c-col()
+  @include f-al-c()
+  flex-direction: column
 
 @mixin f-jc-c()
   @include f()
@@ -36,5 +41,5 @@
   font-family: $family
   font-weight: $weight
 
-@mixin font-primary($size: 1rem, $weight: auto)
+@mixin font-primary($size: 1rem, $weight: normal)
   @include font($size, "Roboto", $weight)
