@@ -1,6 +1,5 @@
-<script lang="ts">
+<script setup lang="ts">
 import "~/assets/sass/globals.sass";
-import ToogleTheme from "~/components/toogle-theme.vue";
 </script>
 
 <template>
@@ -8,4 +7,16 @@ import ToogleTheme from "~/components/toogle-theme.vue";
     <NuxtPage />
   </div>
   <ToogleTheme />
+  <Toaster
+    richColors
+    :toastOptions="{
+      class: 'Toaster',
+      descriptionClass: 'Toaster-description',
+    }"
+  />
 </template>
+
+<style lang="sass">
+.Toaster
+  padding: .8rem
+</style>
