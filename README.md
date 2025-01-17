@@ -1,64 +1,63 @@
 # **Authentication and Authorization System**
 
-This project is a robust authentication and authorization system developed with Nuxt.js. It allows user management, route protection, and access control through roles and permissions. Additionally, it incorporates advanced features such as OAuth2 support, multi-factor authentication, and activity auditing.
-
----
+This project is a frontend developed with Nuxt that integrates seamlessly with the authentication and authorization system in NestJS. It provides an intuitive and secure user interface for managing users, roles, permissions, and performing common tasks like registration, login, and password recovery.
 
 ## **Key Features**
 
 1. **User Registration (Signup)**
 
-   - Allows users to create an account through a registration form.
-   - Data validation and email confirmation.
+   - User registration form.
+   - Password validation indicators to improve user security.
 
-1. **Login**
+1. **Login Interface**
 
-   - Users can authenticate by entering their credentials.
-   - JWT tokens are generated for secure sessions.
+   - Login screen.
+   - Visual indicators during loading and authentication processes.
 
-1. **JWT Authentication**
+1. **Role-Based Dashboard**
 
-   - Uses JWT to handle user authentication.
-   - Tokens are signed with a secret key to verify their authenticity.
+   - Different views and components displayed according to the user's role (`ADMIN`, `USER`, and others).
+   - Dynamic access control based on user permissions.
 
-1. **Role-Based Authorization**
+1. **Protected Routes and Navigation**
 
-   - Roles like `ADMIN`, `USER`, or others are assigned dynamically.
-   - Specific permissions are granted according to the assigned role.
+   - Protected navigation that redirects unauthenticated users to the login page.
+   - Dynamic menu system that adapts based on user permissions.
 
-1. **Route Protection**
+1. **Password Management**
 
-   - Routes are restricted based on authentication and assigned roles.
-   - Middleware is used to validate access.
+   - Interfaces for changing and recovering passwords.
+   - Integration with the backend to validate recovery tokens and set a new password.
 
-1. **Password Change and Recovery**
+1. **Logout Functionality**
 
-   - Requests for password resets via email confirmation.
-   - Token expiration for enhanced security.
+   - Logout button.
+   - Confirmation messages upon logging out.
 
-1. **Logout**
+1. **Token Refresh Handling**
 
-   - Invalidates the JWT to terminate the user session.
+   - Session prolongation management.
+   - Alerts to notify the user when a new login is required.
 
-1. **Token Refresh**
+1. **Activity Auditing Display**
 
-   - Implements refresh tokens to maintain active sessions without needing a new login.
+   - Dashboard showing recent user activities like logins and password changes.
+   - Activity history for admins with filtering and search capabilities.
 
-1. **Auditing and Logs**
+1. **Role and Permission Management UI**
 
-   - Records key activities such as logins, and password changes.
+   - Interface for managing roles and permissions, accessible only to administrators.
+   - Creating, editing, and assigning roles directly from the UI.
 
-1. **Dynamic Roles and Permission Management**
+1. **OAuth2 / Social Login Integration**
 
-   - Create, update, and assign roles dynamically at runtime.
+   - Social login buttons for providers like Google and GitHub.
+   - Seamless integration with the backend authentication flow.
 
-1. **OAuth2 / Social Login Support**
+1. **Multi-Factor Authentication (MFA) Setup**
 
-   - Allows authentication through providers like Google and GitHub.
-
-1. **Multi-Factor Authentication (MFA)**
-
-   - Adds an extra layer of security with multi-factor authentication.
+   - Setup screen to enable or disable MFA.
+   - MFA code verification during login for users with MFA enabled.
 
 ---
 
