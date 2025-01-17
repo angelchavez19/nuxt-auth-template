@@ -1,20 +1,34 @@
+@use './mixins'
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap')
+
 :root
     --background-primary: #ffffff
-    --background-secondary: #f8fafc
+    --background-secondary: #cbd5de
     --text-primary: #0f172a
     --text-secondary: #4c586a
+    --text-error: #ff0000
+    --primary: #00dc82
+    --primary-hover: #08b56d
+    --primary-links: #08b56d
+
+    --text-primary-common: #020420
 
 [data-theme="dark"]
     --background-primary: #020420
-    --background-secondary: #131b30
+    --background-secondary: #212b46
     --text-primary: #ffffff
     --text-secondary: #c5cfdc
+    --text-error: #ff0000
+    --primary: #00dc82
+    --primary-hover: #08b56d
+    --primary-links: #00dc82
 
 *
     padding: 0
     margin: 0
-    box-sizing: content-box
+    box-sizing: border-box
 
     body
+        @include mixins.font-primary(1rem)
         background-color: var(--background-primary)
         color: var(--text-primary)

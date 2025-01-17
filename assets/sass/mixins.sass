@@ -1,0 +1,27 @@
+@mixin f()
+    display: flex
+
+@mixin f-j-c()
+    @include f()
+    justify-content: center
+
+@mixin f-c()
+    @include f()
+    align-items: center
+    justify-content: center
+
+@mixin f-col()
+    @include f()
+    flex-direction: column
+
+@mixin f-c-col()
+    @include f-c()
+    flex-direction: column
+
+@mixin font($size, $family, $weight)
+    font-size: $size
+    font-family: $family
+    font-weight: $weight
+
+@mixin font-primary($size: 1rem, $weight: 400)
+    @include font($size, 'Roboto', $weight)
