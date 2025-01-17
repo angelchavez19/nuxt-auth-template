@@ -5,7 +5,7 @@ import { ErrorMessage, Form, Field } from "vee-validate";
 interface Props {
   schema: SchemaForm;
   loading: boolean;
-  submit: (data: any) => Promise<void>;
+  submit: (any: any, actions: any) => Promise<void>;
   submitButtonText: string;
 }
 defineProps<Props>();
