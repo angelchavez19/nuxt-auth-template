@@ -1,4 +1,4 @@
-<script lang="ts">
+<script setup lang="ts">
 import "~/assets/sass/globals.sass";
 </script>
 
