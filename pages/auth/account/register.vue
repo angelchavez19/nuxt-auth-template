@@ -5,27 +5,30 @@ import { useFormSubmit } from "~/components/form/use-form";
 import { BACKEND_URL } from "~/config/api";
 import { toast } from "vue-sonner";
 
+const localePath = useLocalePath();
+const { t } = useI18n();
+
 const { loading, handleSubmit } = useFormSubmit();
 const router = useRouter();
 
 const schema: SchemaForm = {
   fields: [
     {
-      label: "Your Name",
+      label: t("page.register.form.name"),
       name: "firstName",
       as: "input",
       rules: "required|name",
       autocomplete: "given-name",
     },
     {
-      label: "Your Last Name",
+      label: t("page.register.form.lastName"),
       name: "lastName",
       as: "input",
       rules: "required|name",
       autocomplete: "family-name",
     },
     {
-      label: "Your Email",
+      label: t("page.register.form.email"),
       name: "email",
       as: "input",
       rules: "required|email",
@@ -33,7 +36,7 @@ const schema: SchemaForm = {
       autocomplete: "email",
     },
     {
-      label: "Your Password",
+      label: t("page.register.form.password"),
       name: "password",
       as: "input",
       rules: "required|password",
@@ -49,18 +52,16 @@ const submit = (data: any, actions: any) =>
         const response = await axios.post(`${BACKEND_URL}/auth/account`, data);
 
         if (response.status === 200) {
-          toast.success(
-            "Account created successfully. Please check your email to verify your account."
-          );
+          toast.success(t("page.register.toast.submitRegister.200"));
           actions.resetForm();
           router.push("/auth/login");
         }
       } catch (error: any) {
         if (error.response) {
           if (error.response.status === 409) {
-            toast.error("Email already exists");
+            toast.error(t("page.register.toast.submitRegister.409"));
           } else {
-            toast.error("An unexpected error occurred while creating the user.");
+            toast.error(t("page.register.toast.submitRegister._"));
           }
         }
 
@@ -79,25 +80,25 @@ const submit = (data: any, actions: any) =>
 
 <template>
   <LayoutAuth>
-    <template #title>Register Form</template>
+    <template #title>{{ $t("page.register.title") }}</template>
 
     <FormBuilder
       :schema="schema"
       :loading="loading"
       :submit="submit"
-      submit-button-text="Register Now"
+      :submit-button-text="$t('page.register.form.submitButton')"
     />
 
     <template #footer>
       <LayoutComponentsFooter
-        text="Do you have an account?"
-        link-text="Log In"
-        link="/auth/login"
+        :text="$t('page.register.footer.link1.text')"
+        :link-text="$t('page.register.footer.link1.link-text')"
+        :link="localePath('/auth/login')"
       />
       <LayoutComponentsFooter
-        text="Did you lose your verification email?"
-        link-text="Request a new one"
-        link="/auth/account/refresh-email-verification"
+        :text="$t('page.register.footer.link2.text')"
+        :link-text="$t('page.register.footer.link2.link-text')"
+        :link="localePath('/auth/account/refresh-email-verification')"
       />
     </template>
   </LayoutAuth>
