@@ -1,0 +1,26 @@
+{
+    "content": {
+        "no-token": {
+            "message": "No se ha proporcionado un token para la verificación.",
+            "description": "Por favor, verifica el enlace en tu correo."
+        },
+        "success": {
+            "message": "¡Cuenta verificada!",
+            "description": "Verificación completada con éxito. Tu cuenta está lista para usar."
+        },
+        "error": {
+            "message": "Error en la verificación.",
+            "description": "El token no es válido o ha expirado."
+        }
+    },
+    "footer": {
+        "link1": {
+            "text": "Tu cuenta ha sido verificada.",
+            "link-text": "Iniciar Sesión"
+        },
+        "link2": {
+            "text": "Hubo un error",
+            "link-text": "Solicitar un nuevo correo de verificación."
+        }
+    }
+}

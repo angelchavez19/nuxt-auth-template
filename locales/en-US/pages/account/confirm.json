@@ -1,0 +1,26 @@
+{
+    "content": {
+        "no-token": {
+            "message": "No token has been provided for verification.",
+            "description": "Please check the link in your email."
+        },
+        "success": {
+            "message": "Account verified!",
+            "description": "Verification completed successfully. Your account is ready to use."
+        },
+        "error": {
+            "message": "Verification error.",
+            "description": "The token is invalid or has expired."
+        }
+    },
+    "footer": {
+        "link1": {
+            "text": "Your account has been verified.",
+            "link-text": "Log In"
+        },
+        "link2": {
+            "text": "There was an error",
+            "link-text": "Request a new verification email."
+        }
+    }
+}
