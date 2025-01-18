@@ -90,7 +90,7 @@ const submit = (data: any, actions: any) =>
       <LayoutComponentsFooter
         text="Don't you have an account yet?"
         link-text="Register"
-        link="/auth/register"
+        link="/auth/account/register"
       />
     </template>
   </LayoutAuth>

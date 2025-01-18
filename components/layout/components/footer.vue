@@ -20,6 +20,7 @@ defineProps<Props>();
 
 .footer p
   @include mixins.font-primary(1rem, 400)
+  text-align: center
   a
     color: var(--primary-links)
 </style>
