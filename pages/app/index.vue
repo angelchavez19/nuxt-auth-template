@@ -1,5 +1,8 @@
 <script setup lang="ts"></script>
 
-<template>App</template>
+<template>
+  App
+  <Logout />
+</template>
 
 <style scoped lang="sass"></style>

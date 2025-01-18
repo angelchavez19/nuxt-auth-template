@@ -2,7 +2,7 @@
 
 <template>
   IndexPage
-  <NuxtLink to="/auth/register">Register</NuxtLink>
+  <NuxtLink to="/auth/account/register">Register</NuxtLink>
 </template>
 
 <style scoped lang="sass"></style>
