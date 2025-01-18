@@ -1,0 +1,19 @@
+{
+    "title": "Request a New Verification Email",
+    "form": {
+        "email": "Your Email",
+        "submitButton": "Request Now"
+    },
+    "footer": {
+        "link1": {
+            "text": "Have you verified your email?",
+            "link-text": "Log In"
+        }
+    },
+    "toast": {
+        "200": "We have successfully processed your request. Please verify your email.",
+        "404": "User not found.",
+        "409": "User account is already confirmed",
+        "_": "An unexpected error occurred while creating the user."
+    }
+}
