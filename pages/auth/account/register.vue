@@ -54,7 +54,7 @@ const submit = (data: any, actions: any) =>
         if (response.status === 200) {
           toast.success(t("page.register.toast.submitRegister.200"));
           actions.resetForm();
-          router.push("/auth/login");
+          router.push(localePath("/auth/login"));
         }
       } catch (error: any) {
         if (error.response) {

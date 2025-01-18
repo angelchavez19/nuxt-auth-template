@@ -1,0 +1,22 @@
+{
+    "title": "Login Form",
+    "form": {
+        "email": "Your Email",
+        "password": "Your Password",
+        "submitButton": "Log In"
+    },
+    "footer": {
+        "link1": {
+            "text": "Don't have an account yet?",
+            "link-text": "Register"
+        }
+    },
+    "toast": {
+        "submitLogin": {
+            "401Credentials": "Invalid credentials",
+            "404NotFound": "User not found.",
+            "404Unverified": "User not verified",
+            "_": "An unexpected error occurred while creating the user."
+        }
+    }
+}

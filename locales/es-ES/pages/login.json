@@ -1,0 +1,22 @@
+{
+    "title": "Formulario de Inicio de Sesión",
+    "form": {
+        "email": "Tu Correo Electrónico",
+        "password": "Tu Contraseña",
+        "submitButton": "Iniciar Sesión"
+    },
+    "footer": {
+        "link1": {
+            "text": "¿No tienes una cuenta todavía?",
+            "link-text": "Regístrate"
+        }
+    },
+    "toast": {
+        "submitLogin": {
+            "401Credentials": "Credenciales inválidas",
+            "404NotFound": "Usuario no encontrado.",
+            "404Unverified": "Usuario no verificado",
+            "_": "Ocurrió un error inesperado al crear el usuario."
+        }
+    }
+}
