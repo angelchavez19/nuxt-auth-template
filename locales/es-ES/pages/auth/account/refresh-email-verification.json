@@ -1,0 +1,19 @@
+{
+    "title": "Solicitar un Nuevo Correo de Verificación",
+    "form": {
+        "email": "Tu Correo Electrónico",
+        "submitButton": "Solicitar Ahora"
+    },
+    "footer": {
+        "link1": {
+            "text": "¿Has verificado tu correo?",
+            "link-text": "Iniciar Sesión"
+        }
+    },
+    "toast": {
+        "200": "Hemos procesado tu solicitud con éxito. Por favor, verifica tu correo.",
+        "404": "Usuario no encontrado.",
+        "409": "La cuenta de usuario ya está confirmada",
+        "_": "Ocurrió un error inesperado al crear el usuario."
+    }
+}

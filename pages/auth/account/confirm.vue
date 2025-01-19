@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { BACKEND_URL } from "~/config/api";
 
+const { t } = useI18n();
+
 const route = useRoute();
 
 const isVerified = ref<boolean>();
@@ -11,22 +13,22 @@ onMounted(async () => {
   const token = route.query.token;
 
   if (!token) {
-    message.value = "No token has been provided for verification.";
-    description.value = "Please check the link in your email.";
+    message.value = t("page.auth.confirm.content.no-token.message");
+    description.value = t("page.auth.confirm.content.no-token.description");
     return;
   }
 
   const response = await fetch(`${BACKEND_URL}/auth/account/confirm?token=${token}`);
 
   if (response.status === 200) {
-    message.value = "Account verified!";
-    description.value =
-      "Verification completed successfully. Your account is ready to use.";
+    message.value = t("page.auth.confirm.content.success.message");
+    description.value = t("page.auth.confirm.content.success.description");
     isVerified.value = true;
     return;
   }
-  message.value = "Verification error.";
-  description.value = "The token is invalid or has expired.";
+
+  message.value = t("page.auth.confirm.content.error.message");
+  description.value = t("page.auth.confirm.content.error.description");
   isVerified.value = false;
 });
 </script>
@@ -39,14 +41,14 @@ onMounted(async () => {
 
     <LayoutComponentsFooter
       v-if="isVerified"
-      text="Your account has been verified"
-      link-text="log In"
+      :text="$t('page.auth.confirm.footer.link1.text')"
+      :link-text="$t('page.auth.confirm.footer.link1.link-text')"
       link="/auth/login"
     />
     <LayoutComponentsFooter
       v-if="isVerified === false"
-      text="There was an error"
-      link-text="Request a new verification email."
+      :text="$t('page.auth.confirm.footer.link2.text')"
+      :link-text="$t('page.auth.confirm.footer.link2.link-text')"
       link="/auth/account/refresh-email-verification"
     />
   </LayoutAuthBase>

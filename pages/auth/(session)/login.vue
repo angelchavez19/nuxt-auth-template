@@ -5,13 +5,16 @@ import type { SchemaForm } from "~/components/form/interface";
 import { useFormSubmit } from "~/components/form/use-form";
 import { BACKEND_URL } from "~/config/api";
 
+const localePath = useLocalePath();
+const { t } = useI18n();
+
 const { loading, handleSubmit } = useFormSubmit();
 const router = useRouter();
 
 const schema: SchemaForm = {
   fields: [
     {
-      label: "Your Email",
+      label: t("page.auth.login.form.email"),
       name: "email",
       as: "input",
       rules: "required|email",
@@ -19,7 +22,7 @@ const schema: SchemaForm = {
       autocomplete: "email",
     },
     {
-      label: "Your Password",
+      label: t("page.auth.login.form.password"),
       name: "password",
       as: "input",
       rules: "required",
@@ -35,31 +38,31 @@ const submit = (data: any, actions: any) =>
         const response = await axios.post(`${BACKEND_URL}/auth/login`, data, {
           withCredentials: true,
         });
-        if (response.status === 200) router.push("/app");
+        if (response.status === 200) router.push(localePath("/app"));
       } catch (error: any) {
         if (error.response) {
           if (
             error.response.status === 401 &&
             error.response.data.message === "Invalid credentials"
           ) {
-            toast.error("Invalid credentials");
+            toast.error(t("page.auth.login.toast.submitLogin.401Credentials"));
           } else if (
             error.response.status === 401 &&
             error.response.data.message === "2fa_required"
           ) {
-            router.push("/auth/two-factor");
+            router.push(localePath("/auth/two-factor"));
           } else if (
             error.response.status === 404 &&
             error.response.data.message === "User not found"
           ) {
-            toast.error("User not found.");
+            toast.error(t("page.auth.login.toast.submitLogin.404NotFound"));
           } else if (
             error.response.status === 404 &&
             error.response.data.message === "User unverified"
           ) {
-            toast.error("User unverified");
+            toast.error(t("page.auth.login.toast.submitLogin.404Unverified"));
           } else {
-            toast.error("An unexpected error occurred while creating the user.");
+            toast.error(t("page.auth.login.toast.submitLogin._"));
           }
         }
         actions.resetForm({
@@ -77,19 +80,19 @@ const submit = (data: any, actions: any) =>
 
 <template>
   <LayoutAuth>
-    <template #title>Login Form</template>
+    <template #title>{{ $t("page.auth.login.title") }}</template>
 
     <FormBuilder
       :schema="schema"
       :loading="loading"
       :submit="submit"
-      submit-button-text="Log In"
+      :submit-button-text="$t('page.auth.login.form.submitButton')"
     />
 
     <template #footer>
       <LayoutComponentsFooter
-        text="Don't you have an account yet?"
-        link-text="Register"
+        :text="$t('page.auth.login.footer.link1.text')"
+        :link-text="$t('page.auth.login.footer.link1.link-text')"
         link="/auth/account/register"
       />
     </template>

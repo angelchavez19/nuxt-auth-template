@@ -1,0 +1,27 @@
+{
+    "title": "Register Form",
+    "form": {
+        "name": "Your Name",
+        "lastName": "Your Last Name",
+        "email": "Your Email",
+        "password": "Your Password",
+        "submitButton": "Register Now"
+    },
+    "footer": {
+        "link1": {
+            "text": "Do you already have an account?",
+            "link-text": "Log In"
+        },
+        "link2": {
+            "text": "Did you lose your verification email?",
+            "link-text": "Request a new one"
+        }
+    },
+    "toast": {
+        "submitRegister": {
+            "200": "Account created successfully. Please check your email to verify your account.",
+            "409": "Email already exists",
+            "_": "An unexpected error occurred while creating the user."
+        }
+    }
+}

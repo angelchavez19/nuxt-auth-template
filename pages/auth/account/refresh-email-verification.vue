@@ -5,13 +5,14 @@ import type { SchemaForm } from "~/components/form/interface";
 import { useFormSubmit } from "~/components/form/use-form";
 import { BACKEND_URL } from "~/config/api";
 
+const { t } = useI18n();
+
 const { loading, handleSubmit } = useFormSubmit();
-const router = useRouter();
 
 const schema: SchemaForm = {
   fields: [
     {
-      label: "Your Email",
+      label: t("page.auth.refreshEmailVerification.form.email"),
       name: "email",
       as: "input",
       rules: "required|email",
@@ -30,19 +31,17 @@ const submit = (data: any, actions: any) =>
           data
         );
         if (response.status === 200) {
-          toast.success(
-            "We have successfully processed your request. Please verify your email."
-          );
+          toast.success(t("page.auth.refreshEmailVerification.toast.200"));
           actions.resetForm();
         }
       } catch (error: any) {
         if (error.response) {
           if (error.response.status === 404) {
-            toast.error("User not found.");
+            toast.error(t("page.auth.refreshEmailVerification.toast.404"));
           } else if (error.response.status === 409) {
-            toast.error("User account is confirmed");
+            toast.error(t("page.auth.refreshEmailVerification.toast.409"));
           } else {
-            toast.error("An unexpected error occurred while creating the user.");
+            toast.error(t("page.auth.refreshEmailVerification.toast._"));
           }
         }
         actions.resetForm({
@@ -60,20 +59,20 @@ const submit = (data: any, actions: any) =>
 
 <template>
   <LayoutAuthBase>
-    <template #title>Request a New Verification Email</template>
+    <template #title>{{ $t("page.auth.refreshEmailVerification.title") }}</template>
 
     <FormBuilder
       :schema="schema"
       :loading="loading"
       :submit="submit"
-      submit-button-text="Request Now"
+      :submit-button-text="$t('page.auth.refreshEmailVerification.form.submitButton')"
     />
 
     <Separator />
 
     <LayoutComponentsFooter
-      text="Have you verified your email?"
-      link-text="Log In"
+      :text="$t('page.auth.refreshEmailVerification.footer.link1.text')"
+      :link-text="$t('page.auth.refreshEmailVerification.footer.link1.link-text')"
       link="/auth/login"
     />
   </LayoutAuthBase>

@@ -2,6 +2,8 @@
 
 <template>
   <LayoutAuthBase>
+    <template #title><slot name="title" /></template>
+
     <div class="social"></div>
     <Separator>o</Separator>
 

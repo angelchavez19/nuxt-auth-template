@@ -1,0 +1,27 @@
+{
+    "title": "Formulario de Registro",
+    "form": {
+        "name": "Tu Nombre",
+        "lastName": "Tu Apellido",
+        "email": "Tu Correo Electrónico",
+        "password": "Tu Contraseña",
+        "submitButton": "Regístrate Ahora"
+    },
+    "footer": {
+        "link1": {
+            "text": "¿Ya tienes una cuenta?",
+            "link-text": "Inicia Sesión"
+        },
+        "link2": {
+            "text": "¿Perdiste tu correo de verificación?",
+            "link-text": "Solicita uno nuevo"
+        }
+    },
+    "toast": {
+        "submitRegister": {
+            "200": "Cuenta creada con éxito. Por favor, verifica tu correo para confirmar tu cuenta.",
+            "409": "El correo ya existe",
+            "_": "Ocurrió un error inesperado al crear el usuario."
+        }
+    }
+}
