@@ -5,7 +5,6 @@ import type { SchemaForm } from "~/components/form/interface";
 import { useFormSubmit } from "~/components/form/use-form";
 import { BACKEND_URL } from "~/config/api";
 
-const localePath = useLocalePath();
 const { t } = useI18n();
 
 const { loading, handleSubmit } = useFormSubmit();
@@ -13,7 +12,7 @@ const { loading, handleSubmit } = useFormSubmit();
 const schema: SchemaForm = {
   fields: [
     {
-      label: t("page.refreshEmailVerification.form.email"),
+      label: t("page.auth.refreshEmailVerification.form.email"),
       name: "email",
       as: "input",
       rules: "required|email",
@@ -32,17 +31,17 @@ const submit = (data: any, actions: any) =>
           data
         );
         if (response.status === 200) {
-          toast.success(t("page.refreshEmailVerification.toast.200"));
+          toast.success(t("page.auth.refreshEmailVerification.toast.200"));
           actions.resetForm();
         }
       } catch (error: any) {
         if (error.response) {
           if (error.response.status === 404) {
-            toast.error(t("page.refreshEmailVerification.toast.404"));
+            toast.error(t("page.auth.refreshEmailVerification.toast.404"));
           } else if (error.response.status === 409) {
-            toast.error(t("page.refreshEmailVerification.toast.409"));
+            toast.error(t("page.auth.refreshEmailVerification.toast.409"));
           } else {
-            toast.error(t("page.refreshEmailVerification.toast._"));
+            toast.error(t("page.auth.refreshEmailVerification.toast._"));
           }
         }
         actions.resetForm({
@@ -60,20 +59,20 @@ const submit = (data: any, actions: any) =>
 
 <template>
   <LayoutAuthBase>
-    <template #title>{{ $t("page.refreshEmailVerification.title") }}</template>
+    <template #title>{{ $t("page.auth.refreshEmailVerification.title") }}</template>
 
     <FormBuilder
       :schema="schema"
       :loading="loading"
       :submit="submit"
-      :submit-button-text="$t('page.refreshEmailVerification.form.submitButton')"
+      :submit-button-text="$t('page.auth.refreshEmailVerification.form.submitButton')"
     />
 
     <Separator />
 
     <LayoutComponentsFooter
-      :text="$t('page.refreshEmailVerification.footer.link1.text')"
-      :link-text="$t('page.refreshEmailVerification.footer.link1.link-text')"
+      :text="$t('page.auth.refreshEmailVerification.footer.link1.text')"
+      :link-text="$t('page.auth.refreshEmailVerification.footer.link1.link-text')"
       link="/auth/login"
     />
   </LayoutAuthBase>

@@ -14,21 +14,21 @@ const router = useRouter();
 const schema: SchemaForm = {
   fields: [
     {
-      label: t("page.register.form.name"),
+      label: t("page.auth.register.form.name"),
       name: "firstName",
       as: "input",
       rules: "required|name",
       autocomplete: "given-name",
     },
     {
-      label: t("page.register.form.lastName"),
+      label: t("page.auth.register.form.lastName"),
       name: "lastName",
       as: "input",
       rules: "required|name",
       autocomplete: "family-name",
     },
     {
-      label: t("page.register.form.email"),
+      label: t("page.auth.register.form.email"),
       name: "email",
       as: "input",
       rules: "required|email",
@@ -36,7 +36,7 @@ const schema: SchemaForm = {
       autocomplete: "email",
     },
     {
-      label: t("page.register.form.password"),
+      label: t("page.auth.register.form.password"),
       name: "password",
       as: "input",
       rules: "required|password",
@@ -52,16 +52,16 @@ const submit = (data: any, actions: any) =>
         const response = await axios.post(`${BACKEND_URL}/auth/account`, data);
 
         if (response.status === 200) {
-          toast.success(t("page.register.toast.submitRegister.200"));
+          toast.success(t("page.auth.register.toast.submitRegister.200"));
           actions.resetForm();
           router.push(localePath("/auth/login"));
         }
       } catch (error: any) {
         if (error.response) {
           if (error.response.status === 409) {
-            toast.error(t("page.register.toast.submitRegister.409"));
+            toast.error(t("page.auth.register.toast.submitRegister.409"));
           } else {
-            toast.error(t("page.register.toast.submitRegister._"));
+            toast.error(t("page.auth.register.toast.submitRegister._"));
           }
         }
 
@@ -80,25 +80,25 @@ const submit = (data: any, actions: any) =>
 
 <template>
   <LayoutAuth>
-    <template #title>{{ $t("page.register.title") }}</template>
+    <template #title>{{ $t("page.auth.register.title") }}</template>
 
     <FormBuilder
       :schema="schema"
       :loading="loading"
       :submit="submit"
-      :submit-button-text="$t('page.register.form.submitButton')"
+      :submit-button-text="$t('page.auth.register.form.submitButton')"
     />
 
     <template #footer>
       <LayoutComponentsFooter
-        :text="$t('page.register.footer.link1.text')"
-        :link-text="$t('page.register.footer.link1.link-text')"
-        :link="localePath('/auth/login')"
+        :text="$t('page.auth.register.footer.link1.text')"
+        :link-text="$t('page.auth.register.footer.link1.link-text')"
+        link="/auth/login"
       />
       <LayoutComponentsFooter
-        :text="$t('page.register.footer.link2.text')"
-        :link-text="$t('page.register.footer.link2.link-text')"
-        :link="localePath('/auth/account/refresh-email-verification')"
+        :text="$t('page.auth.register.footer.link2.text')"
+        :link-text="$t('page.auth.register.footer.link2.link-text')"
+        link="/auth/account/refresh-email-verification"
       />
     </template>
   </LayoutAuth>

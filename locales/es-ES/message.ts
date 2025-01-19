@@ -1,13 +1,15 @@
-import registerPage from "./pages/account/register.json";
-import refreshEmailVerificationPage from "./pages/account/refresh-email-verification.json";
-import confirmPage from "./pages/account/confirm.json";
-import loginPage from "./pages/session/login.json";
+import registerPage from "./pages/auth/account/register.json";
+import refreshEmailVerificationPage from "./pages/auth/account/refresh-email-verification.json";
+import confirmPage from "./pages/auth/account/confirm.json";
+import loginPage from "./pages/auth/session/login.json";
 
 export default {
   page: {
-    register: registerPage,
-    refreshEmailVerification: refreshEmailVerificationPage,
-    confirm: confirmPage,
-    login: loginPage,
+    auth: {
+      register: registerPage,
+      refreshEmailVerification: refreshEmailVerificationPage,
+      confirm: confirmPage,
+      login: loginPage,
+    },
   },
 };

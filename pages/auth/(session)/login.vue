@@ -14,7 +14,7 @@ const router = useRouter();
 const schema: SchemaForm = {
   fields: [
     {
-      label: t("page.login.form.email"),
+      label: t("page.auth.login.form.email"),
       name: "email",
       as: "input",
       rules: "required|email",
@@ -22,7 +22,7 @@ const schema: SchemaForm = {
       autocomplete: "email",
     },
     {
-      label: t("page.login.form.password"),
+      label: t("page.auth.login.form.password"),
       name: "password",
       as: "input",
       rules: "required",
@@ -45,7 +45,7 @@ const submit = (data: any, actions: any) =>
             error.response.status === 401 &&
             error.response.data.message === "Invalid credentials"
           ) {
-            toast.error(t("page.login.toast.submitLogin.401Credentials"));
+            toast.error(t("page.auth.login.toast.submitLogin.401Credentials"));
           } else if (
             error.response.status === 401 &&
             error.response.data.message === "2fa_required"
@@ -55,14 +55,14 @@ const submit = (data: any, actions: any) =>
             error.response.status === 404 &&
             error.response.data.message === "User not found"
           ) {
-            toast.error(t("page.login.toast.submitLogin.404NotFound"));
+            toast.error(t("page.auth.login.toast.submitLogin.404NotFound"));
           } else if (
             error.response.status === 404 &&
             error.response.data.message === "User unverified"
           ) {
-            toast.error(t("page.login.toast.submitLogin.404Unverified"));
+            toast.error(t("page.auth.login.toast.submitLogin.404Unverified"));
           } else {
-            toast.error(t("page.login.toast.submitLogin._"));
+            toast.error(t("page.auth.login.toast.submitLogin._"));
           }
         }
         actions.resetForm({
@@ -80,20 +80,20 @@ const submit = (data: any, actions: any) =>
 
 <template>
   <LayoutAuth>
-    <template #title>{{ $t("page.login.title") }}</template>
+    <template #title>{{ $t("page.auth.login.title") }}</template>
 
     <FormBuilder
       :schema="schema"
       :loading="loading"
       :submit="submit"
-      :submit-button-text="$t('page.login.form.submitButton')"
+      :submit-button-text="$t('page.auth.login.form.submitButton')"
     />
 
     <template #footer>
       <LayoutComponentsFooter
-        :text="$t('page.login.footer.link1.text')"
-        :link-text="$t('page.login.footer.link1.link-text')"
-        :link="localePath('/auth/account/register')"
+        :text="$t('page.auth.login.footer.link1.text')"
+        :link-text="$t('page.auth.login.footer.link1.link-text')"
+        link="/auth/account/register"
       />
     </template>
   </LayoutAuth>
