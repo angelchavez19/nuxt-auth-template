@@ -11,6 +11,7 @@ setLocale(locale.value);
     <NuxtPage />
   </div>
   <ToogleTheme />
+  <LanguageSelector />
   <Toaster
     richColors
     :toastOptions="{
