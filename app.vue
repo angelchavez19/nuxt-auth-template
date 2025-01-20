@@ -1,5 +1,9 @@
 <script setup lang="ts">
 import "~/assets/sass/globals.sass";
+import { setLocale } from "@vee-validate/i18n";
+
+const { locale } = useI18n();
+setLocale(locale.value);
 </script>
 
 <template>

@@ -1,31 +1,39 @@
-export const passwordRule = (value: string) => {
+export const passwordUppercase = (value: string) => {
   if (!value) {
     return true;
   }
 
-  if (value.length < 8 || value.length > 72) {
-    return "Password must be between 8 and 72 characters.";
+  return /^(?=.*[A-Z])/.test(value);
+};
+
+export const passwordLowercase = (value: string) => {
+  if (!value) {
+    return true;
   }
 
-  if (!/^(?=.*[A-Z])/.test(value)) {
-    return "Password must contain at least one uppercase letter.";
+  return /^(?=.*[a-z])/.test(value);
+};
+
+export const passwordNumber = (value: string) => {
+  if (!value) {
+    return true;
   }
 
-  if (!/^(?=.*[a-z])/.test(value)) {
-    return "Password must contain at least one lowercase letter.";
+  return /^(?=.*\d)/.test(value);
+};
+
+export const passwordSymbol = (value: string) => {
+  if (!value) {
+    return true;
   }
 
-  if (!/^(?=.*\d)/.test(value)) {
-    return "Password must contain at least one number.";
+  return /^(?=.*[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?])/.test(value);
+};
+
+export const passwordASCII = (value: string) => {
+  if (!value) {
+    return true;
   }
 
-  if (!/^(?=.*[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?])/.test(value)) {
-    return "Password must contain at least one special character.";
-  }
-
-  if (!/^[\x20-\x7E]+$/.test(value)) {
-    return "Password must only contain ASCII printable characters.";
-  }
-
-  return true;
+  return /^(?=.*[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?])/.test(value);
 };

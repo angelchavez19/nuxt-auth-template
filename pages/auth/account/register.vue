@@ -39,7 +39,8 @@ const schema: SchemaForm = {
       label: t("page.auth.register.form.password"),
       name: "password",
       as: "input",
-      rules: "required|password",
+      rules:
+        "required|passwordUppercase|passwordLowercase|passwordNumber|passwordSymbol|passwordASCII|min:8|max:72",
       type: "password",
     },
   ],
