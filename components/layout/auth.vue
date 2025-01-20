@@ -5,7 +5,7 @@
     <template #title><slot name="title" /></template>
 
     <div class="social"></div>
-    <Separator>o</Separator>
+    <Separator>{{ $t("components.layout.auth.separatorText") }}</Separator>
 
     <div class="form"><slot /></div>
 
