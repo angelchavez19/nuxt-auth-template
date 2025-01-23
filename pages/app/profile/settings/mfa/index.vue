@@ -29,6 +29,21 @@ const enabledTwoFactorAuthentication = async () => {
 
   await userStore.getUser();
 };
+
+onMounted(async () => {
+  try {
+    const response = await axios.get(`${BACKEND_URL}/auth/twofa`, {
+      withCredentials: true,
+    });
+
+    if (response.status === 200 && response.data.otpauth_url) {
+      QRCode.toDataURL(response.data.otpauth_url, function (err, code) {
+        if (err) return console.log("error occurred");
+        qr.value = code;
+      });
+    }
+  } catch {}
+});
 </script>
 
 <template>
