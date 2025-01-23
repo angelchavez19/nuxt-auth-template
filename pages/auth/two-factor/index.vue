@@ -1,10 +1,11 @@
 <script setup lang="ts">
 import { BACKEND_URL } from "~/config/api";
 
+const { locale } = useI18n();
 const totpCode = ref("");
 
 const loginWithTotp = async () => {
-  window.location.href = `${BACKEND_URL}/auth/twofa/authenticate?totpCode=${totpCode.value}`;
+  window.location.href = `${BACKEND_URL}/auth/twofa/authenticate?totpCode=${totpCode.value}&lang=${locale.value}`;
 };
 </script>
 

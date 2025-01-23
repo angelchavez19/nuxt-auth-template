@@ -6,7 +6,7 @@ import { useFormSubmit } from "~/components/form/use-form";
 import { BACKEND_URL } from "~/config/api";
 
 const localePath = useLocalePath();
-const { t } = useI18n();
+const { t, locale } = useI18n();
 
 const { loading, handleSubmit } = useFormSubmit();
 const router = useRouter();
@@ -35,9 +35,13 @@ const submit = (data: any, actions: any) =>
   handleSubmit(
     async (data, actions) => {
       try {
-        const response = await axios.post(`${BACKEND_URL}/auth/login`, data, {
-          withCredentials: true,
-        });
+        const response = await axios.post(
+          `${BACKEND_URL}/auth/login?lang=${locale.value}`,
+          data,
+          {
+            withCredentials: true,
+          }
+        );
         if (response.status === 200) router.push(localePath("/app"));
       } catch (error: any) {
         if (error.response) {
