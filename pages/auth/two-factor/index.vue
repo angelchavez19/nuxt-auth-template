@@ -1,5 +1,16 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { BACKEND_URL } from "~/config/api";
 
-<template>2 factor authentication</template>
+const totpCode = ref("");
+
+const loginWithTotp = async () => {
+  window.location.href = `${BACKEND_URL}/auth/twofa/authenticate?totpCode=${totpCode.value}`;
+};
+</script>
+
+<template>
+  <input type="text" v-model="totpCode" />
+  <button @click="loginWithTotp">Login</button>
+</template>
 
 <style scoped lang="sass"></style>
