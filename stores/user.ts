@@ -4,19 +4,19 @@ import type { UserI } from "~/interfaces";
 
 export const useUserStore = defineStore("user-store", () => {
   const user = ref<UserI | null>(null);
-  const router = useRouter();
-  const localePath = useLocalePath();
+
+  const refreshToken = useRefreshToken();
 
   const getUser = async () => {
-    const response = await axios.get(`${BACKEND_URL}/auth/user/info`, {
-      withCredentials: true,
-    });
+    await refreshToken(async () => {
+      const response = await axios.get(`${BACKEND_URL}/auth/user/info`, {
+        withCredentials: true,
+      });
 
-    if (response.status === 200) {
-      user.value = response.data;
-    } else {
-      router.push(localePath("/login"));
-    }
+      if (response.status === 200) {
+        user.value = response.data;
+      }
+    });
   };
 
   return { getUser, user };
