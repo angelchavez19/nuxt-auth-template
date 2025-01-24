@@ -11,14 +11,18 @@ export const useRefreshToken = () => {
     } catch (error: any) {
       if (error.response) {
         if (error.response.status === 403) {
-          await axios.get(`${BACKEND_URL}/auth/refresh-token`, {
-            withCredentials: true,
-          });
+          try {
+            await axios.get(`${BACKEND_URL}/auth/refresh-token`, {
+              withCredentials: true,
+            });
+          } catch {
+            router.push(localePath("/auth/login"));
+          }
 
           try {
             await callback();
-          } catch (error: any) {
-            router.push(localePath("/login"));
+          } catch {
+            router.push(localePath("/auth/login"));
           }
         }
       }

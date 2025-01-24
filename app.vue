@@ -8,7 +8,9 @@ setLocale(locale.value);
 
 <template>
   <div>
-    <NuxtPage />
+    <NuxtLayout>
+      <NuxtPage />
+    </NuxtLayout>
   </div>
   <ToogleTheme />
   <LanguageSelector />

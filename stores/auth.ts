@@ -2,7 +2,7 @@ import axios from "axios";
 import { BACKEND_URL } from "~/config/api";
 import type { UserI } from "~/interfaces";
 
-export const useUserStore = defineStore("user-store", () => {
+export const useAuthStore = defineStore("auth-store", () => {
   const user = ref<UserI | null>(null);
 
   const refreshToken = useRefreshToken();
