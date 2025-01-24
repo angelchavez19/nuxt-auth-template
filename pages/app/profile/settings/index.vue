@@ -3,11 +3,13 @@ const localePath = useLocalePath();
 </script>
 
 <template>
-  Settings
+  <NuxtLayout name="protect">
+    Settings
 
-  <NuxtLink :to="localePath('/app/profile/settings/mfa')">
-    Multifactor authentication
-  </NuxtLink>
+    <NuxtLink :to="localePath('/app/profile/settings/mfa')">
+      Multifactor authentication
+    </NuxtLink>
+  </NuxtLayout>
 </template>
 
 <style scoped lang="sass"></style>

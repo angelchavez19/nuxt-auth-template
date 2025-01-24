@@ -1,20 +1,18 @@
 <script setup lang="ts">
 const localePath = useLocalePath();
 
-const userStore = useUserStore();
-
-onMounted(async () => {
-  await userStore.getUser();
-});
+const authStore = useAuthStore();
 </script>
 
 <template>
-  App
-  <Logout />
+  <NuxtLayout name="protect">
+    App
+    <Logout />
 
-  <NuxtLink :to="localePath('/app/profile/settings')">User settings</NuxtLink>
+    <NuxtLink :to="localePath('/app/profile/settings')">User settings</NuxtLink>
 
-  <code>{{ userStore.user }}</code>
+    <code>{{ authStore.user }}</code>
+  </NuxtLayout>
 </template>
 
 <style scoped lang="sass"></style>

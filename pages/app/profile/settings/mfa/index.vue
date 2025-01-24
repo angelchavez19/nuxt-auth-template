@@ -3,7 +3,7 @@ import axios from "axios";
 import { BACKEND_URL } from "~/config/api";
 import QRCode from "qrcode";
 
-const userStore = useUserStore();
+const userStore = useAuthStore();
 
 const qr = ref<string>();
 
@@ -47,19 +47,21 @@ onMounted(async () => {
 </script>
 
 <template>
-  MFA
-  <div class="">
-    {{ userStore.user?.twoFactorEnabled ? "Habilitado" : "No habilitado" }}
+  <NuxtLayout name="protect">
+    MFA
     <div class="">
-      <button @click="enabledTwoFactorAuthentication">
-        {{ userStore.user?.twoFactorEnabled ? "Desabilitar" : "Habilitar" }}
-      </button>
+      {{ userStore.user?.twoFactorEnabled ? "Habilitado" : "No habilitado" }}
+      <div class="">
+        <button @click="enabledTwoFactorAuthentication">
+          {{ userStore.user?.twoFactorEnabled ? "Desabilitar" : "Habilitar" }}
+        </button>
+      </div>
     </div>
-  </div>
 
-  <div v-show="qr">
-    <img :src="qr" alt="QR code" />
-  </div>
+    <div v-show="qr">
+      <img :src="qr" alt="QR code" />
+    </div>
+  </NuxtLayout>
 </template>
 
 <style scoped lang="sass"></style>
