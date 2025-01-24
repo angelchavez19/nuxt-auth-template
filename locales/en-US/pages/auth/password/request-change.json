@@ -1,0 +1,15 @@
+{
+    "title": "Request Password Change",
+    "form": {
+        "email": "Email you used to register your account",
+        "submitButton": "Request"
+    },
+    "toast": {
+        "submitRequestChangePassword": {
+            "200": "An email with instructions to change the password has been sent.",
+            "404": "The user does not exist.",
+            "409": "The account has not been confirmed.",
+            "_": "There was an error requesting the password change."
+        }
+    }
+}

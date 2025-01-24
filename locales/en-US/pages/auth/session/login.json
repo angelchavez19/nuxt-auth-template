@@ -3,7 +3,8 @@
     "form": {
         "email": "Your Email",
         "password": "Your Password",
-        "submitButton": "Log In"
+        "submitButton": "Log In",
+        "forgotPassword": "Forgot your password?"
     },
     "footer": {
         "link1": {

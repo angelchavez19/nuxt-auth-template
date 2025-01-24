@@ -1,0 +1,19 @@
+{
+    "title": "Confirm Your Password Change",
+    "form": {
+        "password": "Enter your new password",
+        "submitButton": "Confirm"
+    },
+    "toast": {
+        "submitConfirmPassword": {
+            "200": "Password successfully changed",
+            "404": "No valid token found"
+        }
+    },
+    "footer": {
+        "link1": {
+            "text": "Your token doesn't work?",
+            "link-text": "Request a new one"
+        }
+    }
+}

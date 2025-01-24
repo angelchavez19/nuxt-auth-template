@@ -3,7 +3,8 @@
     "form": {
         "email": "Tu Correo Electrónico",
         "password": "Tu Contraseña",
-        "submitButton": "Iniciar Sesión"
+        "submitButton": "Iniciar Sesión",
+        "forgotPassword": "¿Olvidaste tu contraseña?"
     },
     "footer": {
         "link1": {
@@ -16,7 +17,7 @@
             "401Credentials": "Credenciales inválidas",
             "404NotFound": "Usuario no encontrado.",
             "404Unverified": "Usuario no verificado",
-            "_": "Ocurrió un error inesperado al crear el usuario."
+            "_": "Ocurrió un error inesperado al iniciar sesión."
         }
     }
 }

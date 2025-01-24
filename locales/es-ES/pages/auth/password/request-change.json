@@ -1,0 +1,15 @@
+{
+    "title": "Solicitar cambio de contraseña",
+    "form": {
+        "email": "Correo con el que registraste tu cuenta",
+        "submitButton": "Solicitar"
+    },
+    "toast": {
+        "submitRequestChangePassword": {
+            "200": "Se ha enviado un correo electrónico con instrucciones para cambiar la contraseña.",
+            "404": "El usuario no existe",
+            "409": "La cuenta no ha sido confirmada",
+            "_": "Hubo un error al pedir el cambio de contraseña."
+        }
+    }
+}
