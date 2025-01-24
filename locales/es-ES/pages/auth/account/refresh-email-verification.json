@@ -14,6 +14,6 @@
         "200": "Hemos procesado tu solicitud con éxito. Por favor, verifica tu correo.",
         "404": "Usuario no encontrado.",
         "409": "La cuenta de usuario ya está confirmada",
-        "_": "Ocurrió un error inesperado al crear el usuario."
+        "_": "Ocurrió un error inesperado al pedir un correo de verificación. Por favor, inténtalo de nuevo más tarde."
     }
 }

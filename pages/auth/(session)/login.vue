@@ -91,7 +91,16 @@ const submit = (data: any, actions: any) =>
       :loading="loading"
       :submit="submit"
       :submit-button-text="$t('page.auth.login.form.submitButton')"
-    />
+    >
+      <div class="ForgotPassword">
+        <NuxtLink
+          :to="localePath('/auth/password/request-change')"
+          class="ForgotPassword-link"
+        >
+          {{ $t("page.auth.login.form.forgotPassword") }}
+        </NuxtLink>
+      </div>
+    </FormBuilder>
 
     <template #footer>
       <LayoutComponentsFooter
@@ -103,4 +112,11 @@ const submit = (data: any, actions: any) =>
   </LayoutAuth>
 </template>
 
-<style scoped lang="sass"></style>
+<style scoped lang="sass">
+@use '~/assets/sass/mixins'
+
+.ForgotPassword
+  width: 100%
+  .ForgotPassword-link
+    color: var(--text-secondary)
+</style>

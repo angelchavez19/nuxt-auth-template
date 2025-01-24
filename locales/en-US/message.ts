@@ -5,6 +5,7 @@ import registerPage from "./pages/auth/account/register.json";
 import refreshEmailVerificationPage from "./pages/auth/account/refresh-email-verification.json";
 import confirmPage from "./pages/auth/account/confirm.json";
 import loginPage from "./pages/auth/session/login.json";
+import RequestChangePasswordPage from "./pages/auth/password/request-change.json";
 
 export default {
   page: {
@@ -13,6 +14,7 @@ export default {
       refreshEmailVerification: refreshEmailVerificationPage,
       confirm: confirmPage,
       login: loginPage,
+      requestChange: RequestChangePasswordPage,
     },
   },
   components: {

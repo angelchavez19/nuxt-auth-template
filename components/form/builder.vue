@@ -23,6 +23,8 @@ defineProps<Props>();
       <ErrorMessage :name="name" class="error" />
     </div>
 
+    <slot />
+
     <ButtonPrimary :text="submitButtonText" :loading="loading" />
   </Form>
 </template>
