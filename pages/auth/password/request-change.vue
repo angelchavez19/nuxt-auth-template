@@ -8,7 +8,6 @@ import { BACKEND_URL } from "~/config/api";
 const { t, locale } = useI18n();
 
 const { loading, handleSubmit } = useFormSubmit();
-const router = useRouter();
 
 const schema: SchemaForm = {
   fields: [
@@ -28,7 +27,7 @@ const submit = (data: any, actions: any) =>
     async (data, actions) => {
       try {
         const response = await axios.post(
-          `${BACKEND_URL}/auth/password/request-change`,
+          `${BACKEND_URL}/auth/password/request-change?lang=${locale.value}`,
           data,
           { withCredentials: true }
         );

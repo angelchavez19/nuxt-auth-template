@@ -6,7 +6,7 @@ import { BACKEND_URL } from "~/config/api";
 import { toast } from "vue-sonner";
 
 const localePath = useLocalePath();
-const { t } = useI18n();
+const { t, locale } = useI18n();
 
 const { loading, handleSubmit } = useFormSubmit();
 const router = useRouter();
@@ -50,7 +50,10 @@ const submit = (data: any, actions: any) =>
   handleSubmit(
     async (data, actions) => {
       try {
-        const response = await axios.post(`${BACKEND_URL}/auth/account`, data);
+        const response = await axios.post(
+          `${BACKEND_URL}/auth/account?lang=${locale.value}`,
+          data
+        );
 
         if (response.status === 200) {
           toast.success(t("page.auth.register.toast.submitRegister.200"));

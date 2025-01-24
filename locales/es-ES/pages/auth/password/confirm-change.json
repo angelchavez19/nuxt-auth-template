@@ -1,0 +1,19 @@
+{
+    "title": "Confirma el cambio de tu contraseña",
+    "form": {
+        "password": "Ingresa tu nueva contraseña",
+        "submitButton": "Confirmar"
+    },
+    "toast": {
+        "submitConfirmPassword": {
+            "200": "Contraseña cambiada con éxito",
+            "404": "No se ha encontrado un token valido"
+        }
+    },
+    "footer": {
+        "link1": {
+            "text": "¿Tu token no funciona?",
+            "link-text": "Solicita uno nuevo"
+        }
+    }
+}
