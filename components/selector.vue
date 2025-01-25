@@ -32,7 +32,7 @@ onBeforeUnmount(() => {
 <template>
   <div class="Selector">
     <div class="Selector-selected" @click="isExpanded = !isExpanded">
-      <div class="Selector-selected-icon"><IconLanguage /></div>
+      <div class="Selector-selected-icon"><slot name="icon" /></div>
       <span>{{ selected.label }}</span>
     </div>
     <div class="Selector-items" v-show="isExpanded">
@@ -45,7 +45,7 @@ onBeforeUnmount(() => {
           $emit('select', item);
         "
       >
-        {{ item.label }}
+        <span>{{ item.label }}</span>
       </div>
     </div>
   </div>

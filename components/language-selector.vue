@@ -19,5 +19,7 @@ const handleSelected = (lang: Lang) => {
     :items="languages"
     :selected="selectedLang || defaultLang"
     @select="handleSelected"
-  />
+  >
+    <template #icon><IconLanguage style="fill: var(--text-primary)" /></template>
+  </Selector>
 </template>

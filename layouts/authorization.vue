@@ -7,7 +7,10 @@ interface Props {
 defineProps<Props>();
 
 const authStore = useAuthStore();
-callOnce(authStore.getUser);
+
+onMounted(async () => {
+  await authStore.getUser();
+});
 </script>
 
 <template>
