@@ -1,8 +1,12 @@
 <script setup lang="ts">
+import { toast } from "vue-sonner";
 import { googleSdkLoaded } from "vue3-google-login";
 import { BACKEND_URL, FRONTEND_URL } from "~/config/api";
 import { GITHUB_CLIENT_ID, GITHUB_REDIRECT_URL, GOOGLE_CLIENT_ID } from "~/config/social";
 
+const route = useRoute();
+const router = useRouter();
+const localePath = useLocalePath();
 const { locale } = useI18n();
 
 const sendCodeToBackend = async (code: string) => {
@@ -40,6 +44,15 @@ const getGithubLink = () => {
 
   return `${rootURl}?${qs.toString()}`;
 };
+
+onMounted(() => {
+  if (route.query.error === "provider_error") {
+    toast.error(
+      `You registered using a different provider. Please log in with ${route.query.provider}.`
+    );
+    router.push(localePath("auth/login"));
+  }
+});
 </script>
 
 <template>
