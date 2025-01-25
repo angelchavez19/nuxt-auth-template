@@ -34,7 +34,7 @@ onMounted(async () => {
 </script>
 
 <template>
-  <LayoutAuthBase>
+  <NuxtLayout name="auth-base">
     <template #title>{{ message }}</template>
 
     <p>{{ description }}</p>
@@ -51,7 +51,7 @@ onMounted(async () => {
       :link-text="$t('page.auth.confirm.footer.link2.link-text')"
       link="/auth/account/refresh-email-verification"
     />
-  </LayoutAuthBase>
+  </NuxtLayout>
 </template>
 
 <style scoped lang="sass"></style>

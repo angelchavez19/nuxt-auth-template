@@ -1,12 +1,10 @@
-<script setup lang="ts">
-const localePath = useLocalePath();
-</script>
+<script setup lang="ts"></script>
 
 <template>
-  <NuxtLayout name="protect">
+  <NuxtLayout name="authorization">
     Settings
 
-    <NuxtLink :to="localePath('/app/profile/settings/mfa')">
+    <NuxtLink :to="$localePath('/app/profile/settings/mfa')">
       Multifactor authentication
     </NuxtLink>
   </NuxtLayout>

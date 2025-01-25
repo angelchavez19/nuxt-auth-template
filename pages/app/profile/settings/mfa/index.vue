@@ -47,7 +47,7 @@ onMounted(async () => {
 </script>
 
 <template>
-  <NuxtLayout name="protect">
+  <NuxtLayout name="authorization">
     MFA
     <div class="">
       {{ userStore.user?.twoFactorEnabled ? "Habilitado" : "No habilitado" }}
