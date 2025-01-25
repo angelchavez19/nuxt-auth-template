@@ -11,7 +11,9 @@ const authStore = useAuthStore();
 
     <code>{{ authStore.user }}</code>
 
-    <NuxtLink :to="$localePath('/admin')">Admin Dashboard</NuxtLink>
+    <UserBased :roles="['ADMIN']">
+      <NuxtLink :to="$localePath('/admin')">Admin Dashboard</NuxtLink>
+    </UserBased>
   </NuxtLayout>
 </template>
 

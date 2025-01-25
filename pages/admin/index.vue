@@ -4,7 +4,7 @@ const authStore = useAuthStore();
 
 <template>
   <NuxtLink :to="$localePath('/app')">App</NuxtLink>
-  <NuxtLayout name="authorization" :roles="['ADMIN']">
+  <NuxtLayout name="authorization" :roles="['ADMIN']" redirect="/auth/login">
     <code>{{ authStore.user }}</code>
   </NuxtLayout>
 </template>
