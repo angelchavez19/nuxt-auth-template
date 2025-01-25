@@ -1,5 +1,6 @@
+import AuthLayout from "./layouts/auth.json";
+
 import componentsIndex from "./components/index.json";
-import componentsLayout from "./components/layout/index.json";
 
 import registerPage from "./pages/auth/account/register.json";
 import refreshEmailVerificationPage from "./pages/auth/account/refresh-email-verification.json";
@@ -9,6 +10,12 @@ import RequestChangePasswordPage from "./pages/auth/password/request-change.json
 import confirmChangePassword from "./pages/auth/password/confirm-change.json";
 
 export default {
+  layouts: {
+    auth: AuthLayout,
+  },
+  components: {
+    ...componentsIndex,
+  },
   page: {
     auth: {
       register: registerPage,
@@ -18,9 +25,5 @@ export default {
       requestChange: RequestChangePasswordPage,
       confirmChange: confirmChangePassword,
     },
-  },
-  components: {
-    ...componentsIndex,
-    layout: componentsLayout,
   },
 };

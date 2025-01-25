@@ -43,28 +43,28 @@ const getGithubLink = () => {
 </script>
 
 <template>
-  <LayoutAuthBase>
+  <NuxtLayout name="auth-base">
     <template #title><slot name="title" /></template>
 
     <div class="social">
       <button class="social-google" @click="login">
         <IconGoogle />
-        <span>{{ $t("components.layout.auth.social.google") }}</span>
+        <span>{{ $t("layouts.auth.social.google") }}</span>
       </button>
       <a :href="getGithubLink()" class="social-github">
         <IconGithub />
-        <span>{{ $t("components.layout.auth.social.github") }}</span>
+        <span>{{ $t("layouts.auth.social.github") }}</span>
       </a>
     </div>
 
-    <Separator>{{ $t("components.layout.auth.separatorText") }}</Separator>
+    <Separator>{{ $t("layouts.auth.separatorText") }}</Separator>
 
     <div class="form"><slot /></div>
 
     <Separator />
 
     <slot name="footer" />
-  </LayoutAuthBase>
+  </NuxtLayout>
 </template>
 
 <style scoped lang="sass">

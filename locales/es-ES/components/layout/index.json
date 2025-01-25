@@ -1,9 +1,0 @@
-{
-    "auth": {
-        "social": {
-            "google": "Continua con Google",
-            "github": "Continua con GitHub"
-        },
-        "separatorText": "o"
-    }
-}

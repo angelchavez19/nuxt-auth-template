@@ -83,7 +83,7 @@ const submit = (data: any, actions: any) =>
 </script>
 
 <template>
-  <LayoutAuth>
+  <NuxtLayout name="auth">
     <template #title>{{ $t("page.auth.login.title") }}</template>
 
     <FormBuilder
@@ -109,7 +109,7 @@ const submit = (data: any, actions: any) =>
         link="/auth/account/register"
       />
     </template>
-  </LayoutAuth>
+  </NuxtLayout>
 </template>
 
 <style scoped lang="sass">

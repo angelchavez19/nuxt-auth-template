@@ -58,7 +58,7 @@ const submit = (data: any, actions: any) =>
 </script>
 
 <template>
-  <LayoutAuthBase>
+  <NuxtLayout name="auth-base">
     <template #title>{{ $t("page.auth.refreshEmailVerification.title") }}</template>
 
     <FormBuilder
@@ -75,7 +75,7 @@ const submit = (data: any, actions: any) =>
       :link-text="$t('page.auth.refreshEmailVerification.footer.link1.link-text')"
       link="/auth/login"
     />
-  </LayoutAuthBase>
+  </NuxtLayout>
 </template>
 
 <style scoped lang="sass"></style>
