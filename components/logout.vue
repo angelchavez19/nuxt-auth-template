@@ -5,11 +5,13 @@ import { BACKEND_URL } from "~/config/api";
 const loading = ref(false);
 const router = useRouter();
 const localePath = useLocalePath();
+const authStore = useAuthStore();
 
 const handleLogout = async () => {
   loading.value = true;
 
   await axios.get(`${BACKEND_URL}/auth/logout`, { withCredentials: true });
+  authStore.clearData();
   router.push(localePath("/"));
 
   loading.value = false;

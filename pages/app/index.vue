@@ -1,17 +1,17 @@
 <script setup lang="ts">
-const localePath = useLocalePath();
-
 const authStore = useAuthStore();
 </script>
 
 <template>
-  <NuxtLayout name="protect">
+  <NuxtLayout name="authorization">
     App
     <Logout />
 
-    <NuxtLink :to="localePath('/app/profile/settings')">User settings</NuxtLink>
+    <NuxtLink :to="$localePath('/app/profile/settings')">User settings</NuxtLink>
 
     <code>{{ authStore.user }}</code>
+
+    <NuxtLink :to="$localePath('/admin')">Admin Dashboard</NuxtLink>
   </NuxtLayout>
 </template>
 

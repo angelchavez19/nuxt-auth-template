@@ -94,7 +94,7 @@ const submit = (data: any, actions: any) =>
     >
       <div class="ForgotPassword">
         <NuxtLink
-          :to="localePath('/auth/password/request-change')"
+          :to="$localePath('/auth/password/request-change')"
           class="ForgotPassword-link"
         >
           {{ $t("page.auth.login.form.forgotPassword") }}

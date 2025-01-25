@@ -5,14 +5,12 @@ interface Props {
   linkText: string;
 }
 defineProps<Props>();
-
-const localePath = useLocalePath();
 </script>
 
 <template>
   <div class="footer">
     <p>
-      {{ text }} <NuxtLink :to="localePath(link)">{{ linkText }}</NuxtLink>
+      {{ text }} <NuxtLink :to="$localePath(link)">{{ linkText }}</NuxtLink>
     </p>
   </div>
 </template>

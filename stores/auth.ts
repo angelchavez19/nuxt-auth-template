@@ -19,5 +19,9 @@ export const useAuthStore = defineStore("auth-store", () => {
     });
   };
 
-  return { getUser, user };
+  const clearData = () => {
+    user.value = null;
+  }
+
+  return { clearData, getUser, user };
 });
